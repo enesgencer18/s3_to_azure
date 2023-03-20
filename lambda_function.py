@@ -9,8 +9,12 @@ import os
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 
 def lambda_handler(event, context):
-    s3 = boto3.client("s3")
     connect_str = os.getenv('CONNECT_STR')
+    aws_key_id = os.getenv('AWS_KEY_ID')
+    aws_secret_id = os.getenv('AWS_SECRET_ID')
+    s3 = boto3.client("s3", 
+                      aws_access_key_id = aws_key_id, 
+                      aws_secret_access_key = aws_secret_id )
     blob_service_client = BlobServiceClient.from_connection_string(connect_str)
     records = event["Records"]
     
