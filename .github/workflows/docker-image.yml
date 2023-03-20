@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ master ]
 
-name: Deploying Docker Image to Amazon ECR
+name: Deploying Docker Image for AWS Lambda to Amazon ECR
 
 jobs:
   deploy:
