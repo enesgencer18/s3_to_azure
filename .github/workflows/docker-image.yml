@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ master ]
 
-name:`s3-to-azure` on ECR
+name: s3-to-azure on ECR
 
 jobs:
   deploy:
